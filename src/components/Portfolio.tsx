@@ -21,6 +21,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    document.title = content[lang].pageTitle;
   }, [lang]);
 
   function toggleLang() {

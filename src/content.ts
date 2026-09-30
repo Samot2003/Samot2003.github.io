@@ -27,6 +27,7 @@ export const links = {
 };
 
 const es = {
+  pageTitle: "Tomás Aladjem Ramallo · Ingeniero de software",
   nav: {
     experience: "Experiencia",
     projects: "Proyectos",
@@ -43,10 +44,11 @@ const es = {
     logLabel: "Trayectoria en formato log",
     log: [
       { date: "2021-09", level: "INFO", text: "Empiezo Ingeniería Informática en la Universitat de Barcelona" },
-      { date: "2025", level: "INFO", text: "Entro en Win Systems como ingeniero full stack en prácticas" },
+      { date: "2025-09", level: "INFO", text: "Entro en Win Systems como ingeniero full stack en prácticas" },
       { date: "2026-01", level: "INFO", text: "Entrego ServerHealth: logs y métricas de todos los servidores en una sola web" },
-      { date: "2026-02", level: "INFO", text: "Erasmus+ en la Università degli Studi di Trento" },
-      { date: "2026-08", level: "INFO", text: "Presento mi TFG, MINDSCAPE, y el proyecto de agentes autónomos" },
+      { date: "2026-01", level: "INFO", text: "Entrego mi TFG, MINDSCAPE" },
+      { date: "2026-02", level: "INFO", text: "Termino las prácticas y empiezo el Erasmus+ en la Università degli Studi di Trento" },
+      { date: "2026-07", level: "INFO", text: "Me gradúo en Ingeniería Informática por la Universitat de Barcelona" },
       { date: "2026-10", level: "READY", text: "Busco mi primer puesto como ingeniero de software" },
     ] as LogLine[],
   },
@@ -54,7 +56,7 @@ const es = {
     title: "Experiencia",
     company: "Win Systems",
     role: "Ingeniero de software full stack en prácticas",
-    period: "2025 – 2026, Barcelona",
+    period: "Septiembre 2025 – febrero 2026, Barcelona",
     companyNote:
       "Win Systems desarrolla WIGOS, un sistema de gestión de casinos que controla más de 100.000 máquinas en todo el mundo.",
     project: "ServerHealth",
@@ -169,6 +171,7 @@ const es = {
 };
 
 const en: typeof es = {
+  pageTitle: "Tomás Aladjem Ramallo · Software engineer",
   nav: {
     experience: "Experience",
     projects: "Projects",
@@ -185,10 +188,11 @@ const en: typeof es = {
     logLabel: "Career path as a log",
     log: [
       { date: "2021-09", level: "INFO", text: "Start Computer Engineering at the University of Barcelona" },
-      { date: "2025", level: "INFO", text: "Join Win Systems as a full stack software engineering intern" },
+      { date: "2025-09", level: "INFO", text: "Join Win Systems as a full stack software engineering intern" },
       { date: "2026-01", level: "INFO", text: "Ship ServerHealth: logs and metrics from every server in one web app" },
-      { date: "2026-02", level: "INFO", text: "Erasmus+ at the University of Trento" },
-      { date: "2026-08", level: "INFO", text: "Present my thesis, MINDSCAPE, and the autonomous agents project" },
+      { date: "2026-01", level: "INFO", text: "Submit my bachelor's thesis, MINDSCAPE" },
+      { date: "2026-02", level: "INFO", text: "Finish the internship and start Erasmus+ at the University of Trento" },
+      { date: "2026-07", level: "INFO", text: "Graduate in Computer Engineering from the University of Barcelona" },
       { date: "2026-10", level: "READY", text: "Looking for my first software engineering role" },
     ],
   },
@@ -196,7 +200,7 @@ const en: typeof es = {
     title: "Experience",
     company: "Win Systems",
     role: "Full stack software engineering intern",
-    period: "2025 – 2026, Barcelona",
+    period: "September 2025 – February 2026, Barcelona",
     companyNote:
       "Win Systems builds WIGOS, a casino management system that runs more than 100,000 machines worldwide.",
     project: "ServerHealth",
