@@ -12,7 +12,7 @@ npm run dev
 ## Editar contenido
 
 Todo el texto está en `src/content.ts` (objetos `es` y `en`).
-Para mostrar un proyecto oculto (como Dockly), rellena sus campos y quita `hidden: true`.
+Un proyecto con `hidden: true` se mantiene en el archivo pero no se muestra.
 Las imágenes van en `public/img/` y los CV en `public/cv/`.
 
 ## Publicar

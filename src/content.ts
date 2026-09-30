@@ -139,7 +139,7 @@ const es = {
           "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
           "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
           "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
-          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y no está desplegado en producción.",
+          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y el proyecto no está desplegado en producción.",
         ],
         stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
         links: [],
@@ -299,7 +299,7 @@ const en: typeof es = {
           "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
           "Marina search by name, by distance and on a map.",
           "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
-          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and it is not deployed to production.",
+          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and the project is not deployed to production.",
         ],
         images: [
           {

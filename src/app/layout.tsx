@@ -22,10 +22,10 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Tomás Aladjem Ramallo · Ingeniero de software",
   description:
-    "Ingeniero de software junior en Barcelona. Backend en C# y .NET, full stack con React y aplicaciones con IA multimodal.",
+    "Ingeniero de software junior en Barcelona. Backend en C#/.NET y TypeScript, full stack con React y Next.js, y aplicaciones con IA multimodal.",
   openGraph: {
     title: "Tomás Aladjem Ramallo · Ingeniero de software",
-    description: "Backend, full stack e IA. Experiencia en Win Systems y TFG sobre IA multimodal.",
+    description: "Backend, full stack e IA. Experiencia en Win Systems, TFG sobre IA multimodal y Dockly, una plataforma de reserva de amarres.",
     type: "website",
   },
 };
