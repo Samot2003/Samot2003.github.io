@@ -174,12 +174,12 @@ const es = {
   skills: {
     title: "Herramientas",
     groups: [
-      { name: "Lenguajes", items: ["C#", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
-      { name: "Backend", items: ["APIs REST", "C# / .NET", "FastAPI", "Dapper", "Arquitectura cliente-servidor"] },
-      { name: "Frontend", items: ["React", "HTML", "CSS", "Chakra UI"] },
+      { name: "Lenguajes", items: ["C#", "TypeScript", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
+      { name: "Backend", items: ["APIs REST", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
+      { name: "Frontend", items: ["React", "Next.js", "React Native", "Expo", "HTML", "CSS", "Chakra UI"] },
       { name: "IA", items: ["Gemini API", "LLMs", "IA multimodal", "Prompt engineering", "PDDL"] },
-      { name: "Datos", items: ["SQL Server", "MySQL", "Firebase"] },
-      { name: "Día a día", items: ["Git", "GitHub", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
+      { name: "Datos", items: ["PostgreSQL", "PostGIS", "SQL Server", "MySQL", "Firebase"] },
+      { name: "Día a día", items: ["Git", "GitHub", "GitHub Actions", "Docker", "Turborepo", "Jest", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
     ],
   },
   contact: {
@@ -333,7 +333,7 @@ const en: typeof es = {
     title: "Tools",
     groups: [
       { name: "Languages", items: es.skills.groups[0].items },
-      { name: "Backend", items: ["REST APIs", "C# / .NET", "FastAPI", "Dapper", "Client-server architecture"] },
+      { name: "Backend", items: ["REST APIs", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
       { name: "Frontend", items: es.skills.groups[2].items },
       { name: "AI", items: ["Gemini API", "LLMs", "Multimodal AI", "Prompt engineering", "PDDL"] },
       { name: "Data", items: es.skills.groups[4].items },
