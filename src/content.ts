@@ -10,7 +10,9 @@ type Project = {
   points: string[];
   stack: string[];
   links: { label: string; href: string }[];
-  images?: { src: string; alt: string }[];
+  /** width/height default to 1400×736; set them when an image has another aspect ratio. */
+  images?: { src: string; alt: string; width?: number; height?: number }[];
+  imageCredit?: string;
   /** Hidden projects are kept in the file but not rendered until filled in. */
   hidden?: boolean;
 };
@@ -129,12 +131,33 @@ const es = {
       {
         id: "dockly",
         name: "Dockly",
-        context: "",
-        summary: "",
-        points: [],
-        stack: [],
+        context: "Proyecto en equipo de tres personas, 2026",
+        summary:
+          "Una plataforma para reservar amarres en puertos deportivos. Son dos productos sobre la misma API: un marketplace, en web y app móvil, donde el navegante busca un puerto y reserva, y un SaaS con el que el puerto gestiona sus amarres, reservas y ocupación.",
+        points: [
+          "Mi papel: desarrollo full stack y coordinación técnica. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión, e integré el trabajo del equipo.",
+          "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
+          "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
+          "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
+          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y no está desplegado en producción.",
+        ],
+        stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
         links: [],
-        hidden: true,
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Recorrido por la web de Dockly: portada, ficha de puerto, reserva y panel del gestor",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Recorrido por la app de Dockly: de la pantalla de carga a una reserva confirmada",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Fotos de puertos: Wikimedia Commons, con licencias Creative Commons.",
       },
     ] as Project[],
   },
@@ -266,7 +289,34 @@ const en: typeof es = {
           "A communication protocol so both agents can split the work.",
         ],
       },
-      es.projects.items[2],
+      {
+        ...es.projects.items[2],
+        context: "Team project, three people, 2026",
+        summary:
+          "A platform for booking berths at marinas. It is two products on one API: a marketplace, on the web and a mobile app, where sailors find a marina and book, and a SaaS where the marina manages its berths, bookings and occupancy.",
+        points: [
+          "My role: full stack development and technical coordination. I owned bookings, marina search, multi-tenancy and the management dashboard, and integrated the team's work.",
+          "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
+          "Marina search by name, by distance and on a map.",
+          "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
+          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and it is not deployed to production.",
+        ],
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Walkthrough of the Dockly web app: home, marina page, booking and manager dashboard",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Walkthrough of the Dockly mobile app: from the loading screen to a confirmed booking",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Marina photos: Wikimedia Commons, under Creative Commons licences.",
+      },
     ],
   },
   education: {
