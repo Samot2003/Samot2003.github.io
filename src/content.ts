@@ -101,16 +101,27 @@ const es = {
         summary:
           "Una web que empieza la conversación con una imagen. Eliges una obra, un modelo de IA multimodal la analiza y te hace preguntas sobre lo que ves en ella. Está inspirada en la arteterapia y pensada como apoyo a la reflexión, no como sustituto de un profesional.",
         points: [
-          "Frontend en React con Chakra UI y Framer Motion; backend REST en FastAPI documentado con Swagger.",
-          "Gemini 2.5 Flash procesa imagen y texto. Cada fase del diálogo usa su propio prompt y el modelo responde en JSON con un campo que indica cuándo cerrar la sesión.",
+          "La conversación ocurre dentro de la imagen: cuando el modelo habla de una zona, la cámara se acerca a ella, y el usuario puede tocar la imagen para señalar lo que le llama la atención. Cada punto queda marcado y, al terminar, una línea los une en el orden de la conversación.",
+          "Frontend en React con Chakra UI y Framer Motion; backend REST en FastAPI documentado con Swagger, con pruebas que simulan Gemini.",
+          "Gemini 2.5 Flash procesa imagen y texto. Cada fase del diálogo usa su propio prompt y el modelo responde en JSON con el mensaje, la zona de la imagen a la que se refiere y un campo que indica cuándo cerrar la sesión.",
           "Al terminar, genera un resumen de la conversación y lo exporta a PDF con ReportLab.",
           "Dirigido por la Dra. Maite López, con asesoría artística de Pilar Rosado (Facultad de Bellas Artes).",
         ],
         stack: ["React", "FastAPI", "Python", "Gemini 2.5 Flash", "Chakra UI", "REST", "ReportLab"],
         links: [{ label: "Código en GitHub", href: "https://github.com/Samot2003/MINDSCAPE-Multimodal-AI-Assistant" }],
         images: [
-          { src: "/img/mindscape-image-selection.jpg", alt: "Pantalla de MINDSCAPE para elegir la imagen que inicia la conversación" },
-          { src: "/img/mindscape-chat.jpg", alt: "Conversación de MINDSCAPE: el modelo pregunta sobre los colores de la imagen elegida" },
+          {
+            src: "/img/mindscape-chat.jpg",
+            alt: "Conversación de MINDSCAPE escrita sobre la imagen, con los puntos señalados numerados y el cuaderno lateral",
+            width: 1120,
+            height: 700,
+          },
+          {
+            src: "/img/mindscape-finished.jpg",
+            alt: "Fin de una sesión de MINDSCAPE: la imagen enmarcada con una línea que une los puntos de la conversación y la opción de descargar el resumen en PDF",
+            width: 1120,
+            height: 700,
+          },
         ],
       },
       {
@@ -265,15 +276,26 @@ const en: typeof es = {
         summary:
           "A web app where the conversation starts with an image. You pick an artwork, a multimodal AI model analyses it and asks you about what you see in it. It draws on art therapy and is meant to support reflection, not to replace a professional.",
         points: [
-          "React frontend with Chakra UI and Framer Motion; FastAPI REST backend documented with Swagger.",
-          "Gemini 2.5 Flash handles image and text. Each stage of the dialogue has its own prompt, and the model replies in JSON with a field that signals when to end the session.",
+          "The conversation happens inside the image: when the model talks about an area, the camera moves in on it, and the user can tap the image to point at what catches their eye. Each point is marked and, at the end, a line joins them in the order of the conversation.",
+          "React frontend with Chakra UI and Framer Motion; FastAPI REST backend documented with Swagger, with tests that mock Gemini.",
+          "Gemini 2.5 Flash handles image and text. Each stage of the dialogue has its own prompt, and the model replies in JSON with the message, the area of the image it refers to and a field that signals when to end the session.",
           "When the session ends, it writes a summary of the conversation and exports it to PDF with ReportLab.",
           "Supervised by Dr. Maite López, with artistic guidance from Pilar Rosado (Faculty of Fine Arts).",
         ],
         links: [{ label: "Code on GitHub", href: "https://github.com/Samot2003/MINDSCAPE-Multimodal-AI-Assistant" }],
         images: [
-          { src: "/img/mindscape-image-selection.jpg", alt: "MINDSCAPE screen for choosing the image that starts the conversation" },
-          { src: "/img/mindscape-chat.jpg", alt: "MINDSCAPE conversation: the model asks about the colours in the chosen image" },
+          {
+            src: "/img/mindscape-chat.jpg",
+            alt: "MINDSCAPE conversation written over the image, with numbered points and the side notebook",
+            width: 1120,
+            height: 700,
+          },
+          {
+            src: "/img/mindscape-finished.jpg",
+            alt: "End of a MINDSCAPE session: the framed image with a line joining the points of the conversation and the option to download the PDF summary",
+            width: 1120,
+            height: 700,
+          },
         ],
       },
       {
