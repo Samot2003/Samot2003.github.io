@@ -68,10 +68,10 @@ const es = {
       "Construí ServerHealth, una web central que muestra los logs y el estado de todos los servidores sin entrar en ninguno.",
     builtTitle: "Qué construí",
     built: [
-      "API REST en C# que recibe logs, líneas y métricas de los servidores cliente.",
+      "API REST en C# y ASP.NET MVC que recibe logs, líneas y métricas de los servidores cliente.",
       "Vista de logs con recuento de errores, excepciones y warnings, resaltado de sintaxis y filtros por nombre, fecha y número de errores.",
       "Modo monitor que muestra las nuevas líneas de un log en tiempo real.",
-      "Dashboard de CPU, memoria, almacenamiento, bases de datos e IIS, con histórico en SQL Server usando Dapper.",
+      "Dashboard de CPU, memoria, almacenamiento, bases de datos e IIS, con histórico en SQL Server (tablas y consultas diseñadas por mí) usando Dapper.",
       "Capa de acceso a datos con DAOs e interfaces, y un Service Manager que controla el ciclo de vida de los servicios.",
     ],
     decisionsTitle: "Decisiones técnicas",
@@ -89,7 +89,7 @@ const es = {
         text: "Un proceso detecta si alguien está usando la web. Tras cinco minutos sin actividad, los procesos de los servidores cliente pasan a espera hasta que vuelve un usuario.",
       },
     ],
-    stack: ["C#", ".NET", "SQL Server", "Dapper", "JavaScript", "AJAX", "CSHTML", "MessagePack", "Git", "Bitbucket"],
+    stack: ["C#", ".NET", "ASP.NET MVC", "Razor", "SQL Server", "Dapper", "JavaScript", "AJAX", "MessagePack", "Git", "Bitbucket"],
   },
   projects: {
     title: "Proyectos",
@@ -142,18 +142,18 @@ const es = {
       {
         id: "dockly",
         name: "Dockly",
-        context: "Proyecto en equipo de tres personas, 2026",
+        context: "Proyecto en equipo, 2026",
         summary:
           "Una plataforma para reservar amarres en puertos deportivos. Son dos productos sobre la misma API: un marketplace, en web y app móvil, donde el navegante busca un puerto y reserva, y un SaaS con el que el puerto gestiona sus amarres, reservas y ocupación.",
         points: [
-          "Mi papel: desarrollo full stack y coordinación técnica. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión, e integré el trabajo del equipo.",
+          "Mi papel: desarrollo full stack. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión.",
           "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
           "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
           "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
           "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y el proyecto no está desplegado en producción.",
         ],
         stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
-        links: [],
+        links: [{ label: "Código en GitHub", href: "https://github.com/docklyapp/dockly-app" }],
         images: [
           {
             src: "/img/dockly-web.gif",
@@ -186,7 +186,7 @@ const es = {
     title: "Herramientas",
     groups: [
       { name: "Lenguajes", items: ["C#", "TypeScript", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
-      { name: "Backend", items: ["APIs REST", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
+      { name: "Backend", items: ["APIs REST", "C# / .NET", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
       { name: "Frontend", items: ["React", "Next.js", "React Native", "Expo", "HTML", "CSS", "Chakra UI"] },
       { name: "IA", items: ["Gemini API", "LLMs", "IA multimodal", "Prompt engineering", "PDDL"] },
       { name: "Datos", items: ["PostgreSQL", "PostGIS", "SQL Server", "MySQL", "Firebase"] },
@@ -244,10 +244,10 @@ const en: typeof es = {
       "I built ServerHealth, a central web app that shows logs and server health for every machine without logging into any of them.",
     builtTitle: "What I built",
     built: [
-      "A C# REST API that receives logs, lines and metrics from client servers.",
+      "A C# and ASP.NET MVC REST API that receives logs, lines and metrics from client servers.",
       "A log viewer that counts errors, exceptions and warnings, highlights syntax and filters by name, date and error count.",
       "A monitor mode that streams new log lines in real time.",
-      "A dashboard for CPU, memory, storage, databases and IIS, with history stored in SQL Server through Dapper.",
+      "A dashboard for CPU, memory, storage, databases and IIS, with history stored in SQL Server (tables and queries I designed) through Dapper.",
       "A data access layer built on DAOs and interfaces, plus a Service Manager that owns the service lifecycle.",
     ],
     decisionsTitle: "Technical decisions",
@@ -313,11 +313,12 @@ const en: typeof es = {
       },
       {
         ...es.projects.items[2],
-        context: "Team project, three people, 2026",
+        context: "Team project, 2026",
+        links: [{ label: "Code on GitHub", href: "https://github.com/docklyapp/dockly-app" }],
         summary:
           "A platform for booking berths at marinas. It is two products on one API: a marketplace, on the web and a mobile app, where sailors find a marina and book, and a SaaS where the marina manages its berths, bookings and occupancy.",
         points: [
-          "My role: full stack development and technical coordination. I owned bookings, marina search, multi-tenancy and the management dashboard, and integrated the team's work.",
+          "My role: full stack development. I owned bookings, marina search, multi-tenancy and the management dashboard.",
           "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
           "Marina search by name, by distance and on a map.",
           "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
@@ -355,7 +356,7 @@ const en: typeof es = {
     title: "Tools",
     groups: [
       { name: "Languages", items: es.skills.groups[0].items },
-      { name: "Backend", items: ["REST APIs", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
+      { name: "Backend", items: ["REST APIs", "C# / .NET", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
       { name: "Frontend", items: es.skills.groups[2].items },
       { name: "AI", items: ["Gemini API", "LLMs", "Multimodal AI", "Prompt engineering", "PDDL"] },
       { name: "Data", items: es.skills.groups[4].items },
