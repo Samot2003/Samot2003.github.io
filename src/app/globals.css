@@ -444,8 +444,8 @@ img {
   margin-top: 16px;
 }
 
-.project > .shots {
-  margin-block: 28px;
+.project > .shots-figure {
+  margin: 28px 0;
 }
 
 .project > .meta {
@@ -454,13 +454,19 @@ img {
 
 .shots {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--shots-cols, 1fr 1fr);
   gap: 12px;
 }
 
 .shots img {
   border-radius: 6px;
   border: 1px solid var(--rule);
+}
+
+.shots-credit {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 @media (min-width: 1100px) {
@@ -592,6 +598,13 @@ img {
 
   .shots {
     grid-template-columns: 1fr;
+  }
+
+  /* Portrait shots would fill several screens at full width. */
+  .shots img {
+    max-height: 75vh;
+    width: auto;
+    margin-inline: auto;
   }
 
   .log {

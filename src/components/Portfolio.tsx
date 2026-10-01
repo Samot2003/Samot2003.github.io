@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { content, links, type Lang } from "@/content";
 import LogPanel from "./LogPanel";
 
@@ -117,13 +117,20 @@ export default function Portfolio() {
                 <p className="meta">{p.context}</p>
                 <p className="lead">{p.summary}</p>
                 {p.images && (
-                  <div className="shots">
-                    {p.images.map((img) => (
-                      // Static export: plain img keeps the build free of an image optimizer.
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img key={img.src} src={img.src} alt={img.alt} loading="lazy" width={1400} height={736} />
-                    ))}
-                  </div>
+                  <figure className="shots-figure">
+                    <div
+                      className="shots"
+                      // Columns proportional to each image's aspect ratio so all shots share one height.
+                      style={{ "--shots-cols": p.images.map((img) => `${(img.width ?? 1400) / (img.height ?? 736)}fr`).join(" ") } as CSSProperties}
+                    >
+                      {p.images.map((img) => (
+                        // Static export: plain img keeps the build free of an image optimizer.
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img key={img.src} src={img.src} alt={img.alt} loading="lazy" width={img.width ?? 1400} height={img.height ?? 736} />
+                      ))}
+                    </div>
+                    {p.imageCredit && <figcaption className="shots-credit">{p.imageCredit}</figcaption>}
+                  </figure>
                 )}
                 <ul className="list">
                   {p.points.map((pt) => (

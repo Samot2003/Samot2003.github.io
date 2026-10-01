@@ -10,7 +10,9 @@ type Project = {
   points: string[];
   stack: string[];
   links: { label: string; href: string }[];
-  images?: { src: string; alt: string }[];
+  /** width/height default to 1400×736; set them when an image has another aspect ratio. */
+  images?: { src: string; alt: string; width?: number; height?: number }[];
+  imageCredit?: string;
   /** Hidden projects are kept in the file but not rendered until filled in. */
   hidden?: boolean;
 };
@@ -99,16 +101,27 @@ const es = {
         summary:
           "Una web que empieza la conversación con una imagen. Eliges una obra, un modelo de IA multimodal la analiza y te hace preguntas sobre lo que ves en ella. Está inspirada en la arteterapia y pensada como apoyo a la reflexión, no como sustituto de un profesional.",
         points: [
-          "Frontend en React con Chakra UI y Framer Motion; backend REST en FastAPI documentado con Swagger.",
-          "Gemini 2.5 Flash procesa imagen y texto. Cada fase del diálogo usa su propio prompt y el modelo responde en JSON con un campo que indica cuándo cerrar la sesión.",
+          "La conversación ocurre dentro de la imagen: cuando el modelo habla de una zona, la cámara se acerca a ella, y el usuario puede tocar la imagen para señalar lo que le llama la atención. Cada punto queda marcado y, al terminar, una línea los une en el orden de la conversación.",
+          "Frontend en React con Chakra UI y Framer Motion; backend REST en FastAPI documentado con Swagger, con pruebas que simulan Gemini.",
+          "Gemini 2.5 Flash procesa imagen y texto. Cada fase del diálogo usa su propio prompt y el modelo responde en JSON con el mensaje, la zona de la imagen a la que se refiere y un campo que indica cuándo cerrar la sesión.",
           "Al terminar, genera un resumen de la conversación y lo exporta a PDF con ReportLab.",
           "Dirigido por la Dra. Maite López, con asesoría artística de Pilar Rosado (Facultad de Bellas Artes).",
         ],
         stack: ["React", "FastAPI", "Python", "Gemini 2.5 Flash", "Chakra UI", "REST", "ReportLab"],
         links: [{ label: "Código en GitHub", href: "https://github.com/Samot2003/MINDSCAPE-Multimodal-AI-Assistant" }],
         images: [
-          { src: "/img/mindscape-image-selection.jpg", alt: "Pantalla de MINDSCAPE para elegir la imagen que inicia la conversación" },
-          { src: "/img/mindscape-chat.jpg", alt: "Conversación de MINDSCAPE: el modelo pregunta sobre los colores de la imagen elegida" },
+          {
+            src: "/img/mindscape-chat.jpg",
+            alt: "Conversación de MINDSCAPE escrita sobre la imagen, con los puntos señalados numerados y el cuaderno lateral",
+            width: 1120,
+            height: 700,
+          },
+          {
+            src: "/img/mindscape-finished.jpg",
+            alt: "Fin de una sesión de MINDSCAPE: la imagen enmarcada con una línea que une los puntos de la conversación y la opción de descargar el resumen en PDF",
+            width: 1120,
+            height: 700,
+          },
         ],
       },
       {
@@ -129,12 +142,33 @@ const es = {
       {
         id: "dockly",
         name: "Dockly",
-        context: "",
-        summary: "",
-        points: [],
-        stack: [],
+        context: "Proyecto en equipo de tres personas, 2026",
+        summary:
+          "Una plataforma para reservar amarres en puertos deportivos. Son dos productos sobre la misma API: un marketplace, en web y app móvil, donde el navegante busca un puerto y reserva, y un SaaS con el que el puerto gestiona sus amarres, reservas y ocupación.",
+        points: [
+          "Mi papel: desarrollo full stack y coordinación técnica. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión, e integré el trabajo del equipo.",
+          "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
+          "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
+          "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
+          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y el proyecto no está desplegado en producción.",
+        ],
+        stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
         links: [],
-        hidden: true,
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Recorrido por la web de Dockly: portada, ficha de puerto, reserva y panel del gestor",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Recorrido por la app de Dockly: de la pantalla de carga a una reserva confirmada",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Fotos de puertos: Wikimedia Commons, con licencias Creative Commons.",
       },
     ] as Project[],
   },
@@ -151,12 +185,12 @@ const es = {
   skills: {
     title: "Herramientas",
     groups: [
-      { name: "Lenguajes", items: ["C#", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
-      { name: "Backend", items: ["APIs REST", "C# / .NET", "FastAPI", "Dapper", "Arquitectura cliente-servidor"] },
-      { name: "Frontend", items: ["React", "HTML", "CSS", "Chakra UI"] },
+      { name: "Lenguajes", items: ["C#", "TypeScript", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
+      { name: "Backend", items: ["APIs REST", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
+      { name: "Frontend", items: ["React", "Next.js", "React Native", "Expo", "HTML", "CSS", "Chakra UI"] },
       { name: "IA", items: ["Gemini API", "LLMs", "IA multimodal", "Prompt engineering", "PDDL"] },
-      { name: "Datos", items: ["SQL Server", "MySQL", "Firebase"] },
-      { name: "Día a día", items: ["Git", "GitHub", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
+      { name: "Datos", items: ["PostgreSQL", "PostGIS", "SQL Server", "MySQL", "Firebase"] },
+      { name: "Día a día", items: ["Git", "GitHub", "GitHub Actions", "Docker", "Turborepo", "Jest", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
     ],
   },
   contact: {
@@ -242,15 +276,26 @@ const en: typeof es = {
         summary:
           "A web app where the conversation starts with an image. You pick an artwork, a multimodal AI model analyses it and asks you about what you see in it. It draws on art therapy and is meant to support reflection, not to replace a professional.",
         points: [
-          "React frontend with Chakra UI and Framer Motion; FastAPI REST backend documented with Swagger.",
-          "Gemini 2.5 Flash handles image and text. Each stage of the dialogue has its own prompt, and the model replies in JSON with a field that signals when to end the session.",
+          "The conversation happens inside the image: when the model talks about an area, the camera moves in on it, and the user can tap the image to point at what catches their eye. Each point is marked and, at the end, a line joins them in the order of the conversation.",
+          "React frontend with Chakra UI and Framer Motion; FastAPI REST backend documented with Swagger, with tests that mock Gemini.",
+          "Gemini 2.5 Flash handles image and text. Each stage of the dialogue has its own prompt, and the model replies in JSON with the message, the area of the image it refers to and a field that signals when to end the session.",
           "When the session ends, it writes a summary of the conversation and exports it to PDF with ReportLab.",
           "Supervised by Dr. Maite López, with artistic guidance from Pilar Rosado (Faculty of Fine Arts).",
         ],
         links: [{ label: "Code on GitHub", href: "https://github.com/Samot2003/MINDSCAPE-Multimodal-AI-Assistant" }],
         images: [
-          { src: "/img/mindscape-image-selection.jpg", alt: "MINDSCAPE screen for choosing the image that starts the conversation" },
-          { src: "/img/mindscape-chat.jpg", alt: "MINDSCAPE conversation: the model asks about the colours in the chosen image" },
+          {
+            src: "/img/mindscape-chat.jpg",
+            alt: "MINDSCAPE conversation written over the image, with numbered points and the side notebook",
+            width: 1120,
+            height: 700,
+          },
+          {
+            src: "/img/mindscape-finished.jpg",
+            alt: "End of a MINDSCAPE session: the framed image with a line joining the points of the conversation and the option to download the PDF summary",
+            width: 1120,
+            height: 700,
+          },
         ],
       },
       {
@@ -266,7 +311,34 @@ const en: typeof es = {
           "A communication protocol so both agents can split the work.",
         ],
       },
-      es.projects.items[2],
+      {
+        ...es.projects.items[2],
+        context: "Team project, three people, 2026",
+        summary:
+          "A platform for booking berths at marinas. It is two products on one API: a marketplace, on the web and a mobile app, where sailors find a marina and book, and a SaaS where the marina manages its berths, bookings and occupancy.",
+        points: [
+          "My role: full stack development and technical coordination. I owned bookings, marina search, multi-tenancy and the management dashboard, and integrated the team's work.",
+          "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
+          "Marina search by name, by distance and on a map.",
+          "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
+          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and the project is not deployed to production.",
+        ],
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Walkthrough of the Dockly web app: home, marina page, booking and manager dashboard",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Walkthrough of the Dockly mobile app: from the loading screen to a confirmed booking",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Marina photos: Wikimedia Commons, under Creative Commons licences.",
+      },
     ],
   },
   education: {
@@ -283,7 +355,7 @@ const en: typeof es = {
     title: "Tools",
     groups: [
       { name: "Languages", items: es.skills.groups[0].items },
-      { name: "Backend", items: ["REST APIs", "C# / .NET", "FastAPI", "Dapper", "Client-server architecture"] },
+      { name: "Backend", items: ["REST APIs", "C# / .NET", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
       { name: "Frontend", items: es.skills.groups[2].items },
       { name: "AI", items: ["Gemini API", "LLMs", "Multimodal AI", "Prompt engineering", "PDDL"] },
       { name: "Data", items: es.skills.groups[4].items },
