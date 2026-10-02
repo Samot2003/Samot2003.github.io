@@ -20,13 +20,21 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // Social networks need absolute URLs for the preview image (app/opengraph-image.png).
+  metadataBase: new URL("https://samot2003.github.io"),
   title: "Tomás Aladjem Ramallo · Ingeniero de software",
   description:
     "Ingeniero de software junior en Barcelona. Backend en C#/.NET y TypeScript, full stack con React y Next.js, y aplicaciones con IA multimodal.",
   openGraph: {
     title: "Tomás Aladjem Ramallo · Ingeniero de software",
     description: "Backend, full stack e IA. Experiencia en Win Systems, TFG sobre IA multimodal y Dockly, una plataforma de reserva de amarres.",
+    url: "/",
+    siteName: "Tomás Aladjem Ramallo",
+    locale: "es_ES",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
