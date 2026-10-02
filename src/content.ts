@@ -95,6 +95,37 @@ const es = {
     title: "Proyectos",
     items: [
       {
+        id: "dockly",
+        name: "Dockly",
+        context: "Proyecto en equipo, 2026",
+        summary:
+          "Una plataforma para reservar amarres en puertos deportivos. Son dos productos sobre la misma API: un marketplace, en web y app móvil, donde el navegante busca un puerto y reserva, y un SaaS con el que el puerto gestiona sus amarres, reservas y ocupación.",
+        points: [
+          "Mi papel: desarrollo full stack. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión.",
+          "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
+          "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
+          "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
+          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y el proyecto no está desplegado en producción.",
+        ],
+        stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
+        links: [{ label: "Código en GitHub", href: "https://github.com/docklyapp/dockly-app" }],
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Recorrido por la web de Dockly: portada, ficha de puerto, reserva y panel del gestor",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Recorrido por la app de Dockly: de la pantalla de carga a una reserva confirmada",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Fotos de puertos: Wikimedia Commons, con licencias Creative Commons.",
+      },
+      {
         id: "mindscape",
         name: "MINDSCAPE",
         context: "Trabajo de Fin de Grado, Universitat de Barcelona, 2026",
@@ -138,37 +169,6 @@ const es = {
         ],
         stack: ["JavaScript", "Node.js", "BDI", "A*", "PDDL", "LLM"],
         links: [],
-      },
-      {
-        id: "dockly",
-        name: "Dockly",
-        context: "Proyecto en equipo, 2026",
-        summary:
-          "Una plataforma para reservar amarres en puertos deportivos. Son dos productos sobre la misma API: un marketplace, en web y app móvil, donde el navegante busca un puerto y reserva, y un SaaS con el que el puerto gestiona sus amarres, reservas y ocupación.",
-        points: [
-          "Mi papel: desarrollo full stack. Llevé las reservas, la búsqueda de puertos, la multiempresa y el panel de gestión.",
-          "Reservas fiables: la base de datos impide que dos reservas ocupen el mismo amarre a la vez, y el precio se calcula por horas y por días.",
-          "Búsqueda de puertos por nombre, por cercanía y en un mapa.",
-          "Multiempresa con roles: cada organización ve solo sus datos, con permisos distintos según el rol.",
-          "Casi 900 pruebas automáticas e integración continua en cada cambio. El pago es simulado y el proyecto no está desplegado en producción.",
-        ],
-        stack: ["TypeScript", "NestJS", "PostgreSQL", "PostGIS", "Next.js", "React Native", "Expo", "Turborepo"],
-        links: [{ label: "Código en GitHub", href: "https://github.com/docklyapp/dockly-app" }],
-        images: [
-          {
-            src: "/img/dockly-web.gif",
-            alt: "Recorrido por la web de Dockly: portada, ficha de puerto, reserva y panel del gestor",
-            width: 960,
-            height: 600,
-          },
-          {
-            src: "/img/dockly-app.gif",
-            alt: "Recorrido por la app de Dockly: de la pantalla de carga a una reserva confirmada",
-            width: 320,
-            height: 693,
-          },
-        ],
-        imageCredit: "Fotos de puertos: Wikimedia Commons, con licencias Creative Commons.",
       },
     ] as Project[],
   },
@@ -272,6 +272,35 @@ const en: typeof es = {
     items: [
       {
         ...es.projects.items[0],
+        context: "Team project, 2026",
+        links: [{ label: "Code on GitHub", href: "https://github.com/docklyapp/dockly-app" }],
+        summary:
+          "A platform for booking berths at marinas. It is two products on one API: a marketplace, on the web and a mobile app, where sailors find a marina and book, and a SaaS where the marina manages its berths, bookings and occupancy.",
+        points: [
+          "My role: full stack development. I owned bookings, marina search, multi-tenancy and the management dashboard.",
+          "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
+          "Marina search by name, by distance and on a map.",
+          "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
+          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and the project is not deployed to production.",
+        ],
+        images: [
+          {
+            src: "/img/dockly-web.gif",
+            alt: "Walkthrough of the Dockly web app: home, marina page, booking and manager dashboard",
+            width: 960,
+            height: 600,
+          },
+          {
+            src: "/img/dockly-app.gif",
+            alt: "Walkthrough of the Dockly mobile app: from the loading screen to a confirmed booking",
+            width: 320,
+            height: 693,
+          },
+        ],
+        imageCredit: "Marina photos: Wikimedia Commons, under Creative Commons licences.",
+      },
+      {
+        ...es.projects.items[1],
         context: "Bachelor's thesis, University of Barcelona, 2026",
         summary:
           "A web app where the conversation starts with an image. You pick an artwork, a multimodal AI model analyses it and asks you about what you see in it. It draws on art therapy and is meant to support reflection, not to replace a professional.",
@@ -299,7 +328,7 @@ const en: typeof es = {
         ],
       },
       {
-        ...es.projects.items[1],
+        ...es.projects.items[2],
         name: "Autonomous agents for Deliveroo.js",
         context: "Autonomous Software Agents, University of Trento, 2026. With Erik Brenner Hedmark",
         summary:
@@ -310,35 +339,6 @@ const en: typeof es = {
           "PDDL planning with Fast Downward, generating the domain and problem from the current state.",
           "A communication protocol so both agents can split the work.",
         ],
-      },
-      {
-        ...es.projects.items[2],
-        context: "Team project, 2026",
-        links: [{ label: "Code on GitHub", href: "https://github.com/docklyapp/dockly-app" }],
-        summary:
-          "A platform for booking berths at marinas. It is two products on one API: a marketplace, on the web and a mobile app, where sailors find a marina and book, and a SaaS where the marina manages its berths, bookings and occupancy.",
-        points: [
-          "My role: full stack development. I owned bookings, marina search, multi-tenancy and the management dashboard.",
-          "Reliable bookings: the database prevents two bookings from taking the same berth at the same time, and prices are worked out by the hour and by the day.",
-          "Marina search by name, by distance and on a map.",
-          "Multi-tenant with roles: each organisation only sees its own data, with different permissions per role.",
-          "Almost 900 automated tests and continuous integration on every change. Payment is simulated and the project is not deployed to production.",
-        ],
-        images: [
-          {
-            src: "/img/dockly-web.gif",
-            alt: "Walkthrough of the Dockly web app: home, marina page, booking and manager dashboard",
-            width: 960,
-            height: 600,
-          },
-          {
-            src: "/img/dockly-app.gif",
-            alt: "Walkthrough of the Dockly mobile app: from the loading screen to a confirmed booking",
-            width: 320,
-            height: 693,
-          },
-        ],
-        imageCredit: "Marina photos: Wikimedia Commons, under Creative Commons licences.",
       },
     ],
   },
