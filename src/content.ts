@@ -126,6 +126,36 @@ const es = {
         imageCredit: "Fotos de puertos: Wikimedia Commons, con licencias Creative Commons.",
       },
       {
+        id: "logpulse",
+        name: "LogPulse",
+        context: "Proyecto personal, 2026",
+        summary:
+          "Monitorización de servidores autoalojada en C# y .NET 8. Un agente ligero recoge métricas y logs en cada servidor, una API en ASP.NET Core los guarda en SQL Server y un dashboard en Blazor los muestra en tiempo real. Es la versión que haría ahora de lo que construí en Win Systems.",
+        points: [
+          "Mi papel: lo construí con Claude Code como programador en pareja. Yo definí el alcance y los hitos, tomé las decisiones de diseño y despliegue, y revisé y aprobé cada cambio.",
+          "Agente para Windows (servicio) y Linux (systemd) que lee logs como tail -F, sobrevive a rotaciones y reinicios, y envía lotes en MessagePack con reintentos. La posición en cada fichero se guarda solo cuando la API confirma el lote, así que un fallo reenvía líneas en vez de perderlas.",
+          "Autenticación con JWT de vida corta y tokens de refresco rotatorios: reutilizar uno revoca la sesión entera. El dashboard actúa de backend-for-frontend y los tokens nunca llegan al navegador.",
+          "Muestreo adaptativo: la API avisa a los agentes de si alguien está mirando, y muestrean cada 5 s en ese caso y cada 30 s si no.",
+          "338 pruebas, 62 de ellas de integración contra SQL Server en Testcontainers. CI en cada PR y CD con OIDC hacia Azure Container Apps, dimensionado para los planes gratuitos.",
+        ],
+        stack: ["C#", ".NET 8", "ASP.NET Core", "Blazor", "SignalR", "SQL Server", "Dapper", "MessagePack", "Docker", "Azure", "Bicep", "GitHub Actions", "xUnit"],
+        links: [{ label: "Código en GitHub", href: "https://github.com/Samot2003/logpulse" }],
+        images: [
+          {
+            src: "/img/logpulse-overview.png",
+            alt: "Vista general de LogPulse con el uso de CPU, memoria y disco de los servidores en directo",
+            width: 1280,
+            height: 640,
+          },
+          {
+            src: "/img/logpulse-logs.png",
+            alt: "Visor de logs de LogPulse filtrado por severidad",
+            width: 1280,
+            height: 860,
+          },
+        ],
+      },
+      {
         id: "mindscape",
         name: "MINDSCAPE",
         context: "Trabajo de Fin de Grado, Universitat de Barcelona, 2026",
@@ -186,11 +216,11 @@ const es = {
     title: "Herramientas",
     groups: [
       { name: "Lenguajes", items: ["C#", "TypeScript", "Python", "Java", "JavaScript", "SQL", "C++", "C"] },
-      { name: "Backend", items: ["APIs REST", "C# / .NET", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
-      { name: "Frontend", items: ["React", "Next.js", "React Native", "Expo", "HTML", "CSS", "Chakra UI"] },
+      { name: "Backend", items: ["APIs REST", "C# / .NET", "ASP.NET Core", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Arquitectura hexagonal", "Arquitectura cliente-servidor"] },
+      { name: "Frontend", items: ["React", "Next.js", "Blazor", "React Native", "Expo", "HTML", "CSS", "Chakra UI"] },
       { name: "IA", items: ["Gemini API", "LLMs", "IA multimodal", "Prompt engineering", "PDDL"] },
       { name: "Datos", items: ["PostgreSQL", "PostGIS", "SQL Server", "MySQL", "Firebase"] },
-      { name: "Día a día", items: ["Git", "GitHub", "GitHub Actions", "Docker", "Turborepo", "Jest", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
+      { name: "Día a día", items: ["Git", "GitHub", "GitHub Actions", "Docker", "Azure", "Turborepo", "Jest", "Bitbucket", "Swagger", "VS Code", "IntelliJ IDEA"] },
     ],
   },
   contact: {
@@ -301,6 +331,34 @@ const en: typeof es = {
       },
       {
         ...es.projects.items[1],
+        context: "Personal project, 2026",
+        summary:
+          "Self-hosted server monitoring in C# and .NET 8. A lightweight agent collects metrics and logs on each server, an ASP.NET Core API stores them in SQL Server and a Blazor dashboard shows them live. It is the version I would build today of what I built at Win Systems.",
+        points: [
+          "My role: I built it with Claude Code as a pair programmer. I set the scope and milestones, made the design and deployment decisions, and reviewed and approved every change.",
+          "An agent for Windows (service) and Linux (systemd) that follows log files like tail -F, survives rotation and restarts, and sends MessagePack batches with retries. The position in each file is saved only after the API confirms the batch, so a crash resends lines instead of losing them.",
+          "Authentication with short-lived JWTs and rotating refresh tokens: reusing one revokes the whole session. The dashboard acts as a backend-for-frontend and tokens never reach the browser.",
+          "Adaptive sampling: the API tells agents whether anyone is watching, and they sample every 5 s if so and every 30 s if not.",
+          "338 tests, 62 of them integration tests against SQL Server in Testcontainers. CI on every PR and CD with OIDC to Azure Container Apps, sized for the free tiers.",
+        ],
+        links: [{ label: "Code on GitHub", href: "https://github.com/Samot2003/logpulse" }],
+        images: [
+          {
+            src: "/img/logpulse-overview.png",
+            alt: "LogPulse overview with live CPU, memory and disk usage of the servers",
+            width: 1280,
+            height: 640,
+          },
+          {
+            src: "/img/logpulse-logs.png",
+            alt: "LogPulse log viewer filtered by severity",
+            width: 1280,
+            height: 860,
+          },
+        ],
+      },
+      {
+        ...es.projects.items[2],
         context: "Bachelor's thesis, University of Barcelona, 2026",
         summary:
           "A web app where the conversation starts with an image. You pick an artwork, a multimodal AI model analyses it and asks you about what you see in it. It draws on art therapy and is meant to support reflection, not to replace a professional.",
@@ -328,7 +386,7 @@ const en: typeof es = {
         ],
       },
       {
-        ...es.projects.items[2],
+        ...es.projects.items[3],
         name: "Autonomous agents for Deliveroo.js",
         context: "Autonomous Software Agents, University of Trento, 2026. With Erik Brenner Hedmark",
         summary:
@@ -356,7 +414,7 @@ const en: typeof es = {
     title: "Tools",
     groups: [
       { name: "Languages", items: es.skills.groups[0].items },
-      { name: "Backend", items: ["REST APIs", "C# / .NET", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
+      { name: "Backend", items: ["REST APIs", "C# / .NET", "ASP.NET Core", "ASP.NET MVC", "Node.js", "NestJS", "FastAPI", "TypeORM", "Dapper", "Hexagonal architecture", "Client-server architecture"] },
       { name: "Frontend", items: es.skills.groups[2].items },
       { name: "AI", items: ["Gemini API", "LLMs", "Multimodal AI", "Prompt engineering", "PDDL"] },
       { name: "Data", items: es.skills.groups[4].items },
