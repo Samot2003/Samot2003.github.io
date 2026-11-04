@@ -356,6 +356,10 @@ img {
   margin-top: 6px;
 }
 
+.job-current {
+  margin-bottom: 48px;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.9375rem;
