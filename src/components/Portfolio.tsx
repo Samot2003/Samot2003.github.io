@@ -76,6 +76,12 @@ export default function Portfolio() {
         <section id="experiencia" className="section">
           <h2 className="section-title">{t.experience.title}</h2>
           <div className="section-body">
+            <div className="job-head job-current">
+              <h3>{t.experience.current.company}</h3>
+              <p className="job-role">{t.experience.current.role}</p>
+              <p className="meta">{t.experience.current.period}</p>
+            </div>
+
             <div className="job-head">
               <h3>{t.experience.company}</h3>
               <p className="job-role">{t.experience.role}</p>

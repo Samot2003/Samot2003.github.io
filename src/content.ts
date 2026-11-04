@@ -29,7 +29,7 @@ export const links = {
 };
 
 const es = {
-  pageTitle: "Tomás Aladjem Ramallo · Ingeniero de software",
+  pageTitle: "Tomás Aladjem Ramallo · Desarrollador de software",
   nav: {
     experience: "Experiencia",
     projects: "Proyectos",
@@ -39,8 +39,8 @@ const es = {
   },
   hero: {
     name: "Tomás Aladjem Ramallo",
-    role: "Ingeniero de software junior en Barcelona. Trabajo en backend, full stack y aplicaciones con IA.",
-    status: "Disponible para trabajar",
+    role: "Desarrollador de software junior en Inmize, en Barcelona. Backend, full stack y aplicaciones con IA.",
+    status: "Trabajando en Inmize",
     cv: "Descargar CV",
     write: "Escríbeme",
     logLabel: "Trayectoria en formato log",
@@ -51,11 +51,16 @@ const es = {
       { date: "2026-01", level: "INFO", text: "Entrego mi TFG, MINDSCAPE" },
       { date: "2026-02", level: "INFO", text: "Termino las prácticas y empiezo el Erasmus+ en la Università degli Studi di Trento" },
       { date: "2026-07", level: "INFO", text: "Me gradúo en Ingeniería Informática por la Universitat de Barcelona" },
-      { date: "2026-10", level: "READY", text: "Busco mi primer puesto como ingeniero de software" },
+      { date: "2026-11", level: "READY", text: "Empiezo como desarrollador de software junior en Inmize" },
     ] as LogLine[],
   },
   experience: {
     title: "Experiencia",
+    current: {
+      company: "Inmize",
+      role: "Desarrollador de software junior",
+      period: "Noviembre 2026 – actualidad, Barcelona",
+    },
     company: "Win Systems",
     role: "Ingeniero de software full stack en prácticas",
     period: "Septiembre 2025 – febrero 2026, Barcelona",
@@ -225,7 +230,7 @@ const es = {
   },
   contact: {
     title: "Contacto",
-    text: "Busco un puesto de ingeniero de software junior en backend, full stack o IA, en Barcelona o en remoto. Si tienes una oferta o quieres hablar de algún proyecto, escríbeme.",
+    text: "Si quieres hablar de algún proyecto, escríbeme.",
     email: "Correo",
     cvTitle: "Currículum en PDF",
     cvLangs: { es: "Español", en: "Inglés", ca: "Catalán" },
@@ -235,7 +240,7 @@ const es = {
 };
 
 const en: typeof es = {
-  pageTitle: "Tomás Aladjem Ramallo · Software engineer",
+  pageTitle: "Tomás Aladjem Ramallo · Software developer",
   nav: {
     experience: "Experience",
     projects: "Projects",
@@ -245,8 +250,8 @@ const en: typeof es = {
   },
   hero: {
     name: "Tomás Aladjem Ramallo",
-    role: "Junior software engineer based in Barcelona. I work on backend, full stack and AI applications.",
-    status: "Open to work",
+    role: "Junior software developer at Inmize, in Barcelona. Backend, full stack and AI applications.",
+    status: "Working at Inmize",
     cv: "Download CV",
     write: "Email me",
     logLabel: "Career path as a log",
@@ -257,11 +262,16 @@ const en: typeof es = {
       { date: "2026-01", level: "INFO", text: "Submit my bachelor's thesis, MINDSCAPE" },
       { date: "2026-02", level: "INFO", text: "Finish the internship and start Erasmus+ at the University of Trento" },
       { date: "2026-07", level: "INFO", text: "Graduate in Computer Engineering from the University of Barcelona" },
-      { date: "2026-10", level: "READY", text: "Looking for my first software engineering role" },
+      { date: "2026-11", level: "READY", text: "Start as a junior software developer at Inmize" },
     ],
   },
   experience: {
     title: "Experience",
+    current: {
+      company: "Inmize",
+      role: "Junior software developer",
+      period: "November 2026 – present, Barcelona",
+    },
     company: "Win Systems",
     role: "Full stack software engineering intern",
     period: "September 2025 – February 2026, Barcelona",
@@ -423,7 +433,7 @@ const en: typeof es = {
   },
   contact: {
     title: "Contact",
-    text: "I'm looking for a junior software engineering role in backend, full stack or AI, in Barcelona or remote. If you have an opening or want to talk about a project, email me.",
+    text: "If you want to talk about a project, email me.",
     email: "Email",
     cvTitle: "CV as PDF",
     cvLangs: { es: "Spanish", en: "English", ca: "Catalan" },
