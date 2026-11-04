@@ -60,6 +60,8 @@ const es = {
       company: "Inmize",
       role: "Desarrollador de software junior",
       period: "Noviembre 2026 – actualidad, Barcelona",
+      companyNote:
+        "Inmize es una consultora de Industria 4.0 con sedes en Barcelona y Nueva York. Conecta sistemas de planta y crea plataformas de datos industriales, dashboards y flujos de trabajo con IA para sectores como la energía, la alimentación o las ciencias de la vida.",
     },
     company: "Win Systems",
     role: "Ingeniero de software full stack en prácticas",
@@ -271,6 +273,8 @@ const en: typeof es = {
       company: "Inmize",
       role: "Junior software developer",
       period: "November 2026 – present, Barcelona",
+      companyNote:
+        "Inmize is an Industry 4.0 consultancy with offices in Barcelona and New York. It connects plant systems and builds industrial data platforms, dashboards and AI workflows for sectors such as energy, food and beverage, and life sciences.",
     },
     company: "Win Systems",
     role: "Full stack software engineering intern",
